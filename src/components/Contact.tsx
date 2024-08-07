@@ -1,8 +1,33 @@
 import ContactImg from "./../assets/imgs/Contact_face.webp";
-import SendButton from "./../assets/imgs/buttons/Send_message.svg";
 import ContactBG from "./../assets/imgs/contact_bg.webp";
+import { gsap } from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import ContactForm from "./ContactForm";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
+  useGSAP(() => {
+    gsap.from('.contaxt', {
+      translateY: 300,
+      rotate: 360,
+      stagger: {
+        each: 0.05,
+        from: 'random'
+      },
+
+      scrollTrigger: {
+        trigger: ".js-contact",
+        start: "top 95%",
+      },
+      ease: 'back.out',
+      duration: 1
+    })
+  }, []);
+
+
   return (
     <div className="relative z-20">
       <div className="relative z-20 grid md:grid-cols-2 items-center w-full mt-20 md:mt-40 pb-5">
@@ -16,37 +41,22 @@ export default function Contact() {
           </div>
         </div>
         <div className="grid lg:gap-20 md:gap-16 gap-14 pl-6 md:pl-0 pr-6 md:pr-14 lg:pr-20">
-          <h2 className="uppercase text-left">Contact US</h2>
-          <form action="" className="grid gap-5 max-w-xl">
-            <div className="bg-[#747C94] shadow-inner shadow-black/25 px-5 py-4 rounded-xl">
-              <input
-                type="email"
-                name=""
-                id=""
-                className="bg-transparent w-full outline-none border-none lg:text-xl"
-                placeholder="EMAIL"
-              />
+          <h2 className="uppercase text-left js-contact">
+            <div className="word">
+              <div className="contaxt">c</div>
+              <div className="contaxt">o</div>
+              <div className="contaxt">n</div>
+              <div className="contaxt">t</div>
+              <div className="contaxt">a</div>
+              <div className="contaxt">c</div>
+              <div className="contaxt">t</div>
             </div>
-            <div className="bg-[#747C94] shadow-inner shadow-black/25 px-5 py-4 rounded-xl">
-              <textarea
-                name=""
-                id=""
-                placeholder="Message"
-                className="resize-none bg-transparent h-24 w-full outline-none border-none lg:text-xl"
-              ></textarea>
+            <div className="word">
+              <div className="contaxt">u</div>
+              <div className="contaxt">s</div>
             </div>
-            <button
-              type="submit"
-              id="button"
-              className="bg-none outline-none border-none ms-auto max-w-[180px] md:max-w-[120px] xl:max-w-[180px] shrink-0 btnHov"
-            >
-              <img
-                src={SendButton}
-                alt="Join Waitlist"
-                className="h-auto w-full object-contain object-center"
-              />
-            </button>
-          </form>
+          </h2>
+          <ContactForm />
         </div>
       </div>
       <div className="absolute z-10 w-screen md:h-[84%] h-[87%] xl:h-[75%] left-0 bottom-0">

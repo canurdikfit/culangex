@@ -14,16 +14,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Welcome() {
   useGSAP(() => {
-    gsap.from("#blurred", {
-      translateX: -200,
+    gsap.to("#blurred", {
+      translateX: 0,
       scrollTrigger: {
         trigger: "#blurred",
         start: "top bottom",
-        end: "top 15%",
+        end: 'top 40%',
         scrub: true,
       },
-      ease: "power1.inOut",
+      ease: "power3.in",
     });
+
+    gsap.from('.chars', {
+      translateY: 300,
+      rotate: 360,
+      stagger: {
+        each: 0.05,
+        from: 'random'
+      },
+
+      scrollTrigger: {
+        trigger: ".js-word",
+        start: "top 95%",
+      },
+      ease: 'back.out',
+      duration: 1
+    })
   }, []);
 
   return (
@@ -47,17 +63,42 @@ export default function Welcome() {
             className="h-full w-auto object-contain"
           />
         </div>
-        <div className="absolute left-0 md:-bottom-48 xl:-bottom-[250px] z-30 h-52 -bottom-28 md:h-[300px] xl:h-[500px]">
+        <div
+          id="blurred"
+          className="absolute left-0 md:-bottom-48 xl:-bottom-[250px] z-30 h-52 -bottom-28 md:h-[300px] xl:h-[500px] -translate-x-60">
           <img
             src={Blurred}
             alt="Blurred"
-            id="blurred"
             className="h-full w-auto object-contain"
           />
         </div>
 
         <div className="relative z-20">
-          <h2>Welcome to culangex</h2>
+          <h2 className="js-word">
+            <div className="word">
+              <div className="chars">W</div>
+              <div className="chars">e</div>
+              <div className="chars">l</div>
+              <div className="chars">c</div>
+              <div className="chars">o</div>
+              <div className="chars">m</div>
+              <div className="chars">e</div>
+            </div>
+            <div className="word">
+              <div className="chars">t</div>
+              <div className="chars">o</div>
+            </div>
+            <div className="word">
+              <div className="chars">c</div>
+              <div className="chars">u</div>
+              <div className="chars">l</div>
+              <div className="chars">a</div>
+              <div className="chars">n</div>
+              <div className="chars">g</div>
+              <div className="chars">e</div>
+              <div className="chars">x</div>
+            </div>
+          </h2>
           <VideoDisplayer />
         </div>
       </div>

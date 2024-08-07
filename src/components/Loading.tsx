@@ -9,83 +9,71 @@ gsap.registerPlugin(useGSAP);
 
 export default function Loading() {
   useGSAP(() => {
-    gsap.fromTo(
-      "#culangex",
-      {
-        scale: 0,
-      },
-      {
-        scale: 0.7,
-        duration: 2.5,
+    const timeline = gsap.timeline({
+      repeat: 0, repeatDelay: 0.5
+    })
+    const handleAfterLoad = () => {
+      timeline.to('#culangex', {
+        scale: .65,
+        opacity: 1,
+        duration: 2,
+        ease: 'bounce.inOut'
+      })
+
+      timeline.to("#flower_vase", {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
         ease: "sine",
-      }
-    );
+      });
 
-    gsap.from("#flower_vase", {
-      x: 500,
-      y: 500,
-      delay: 2,
-      duration: 1.5,
-      ease: "circ",
-    });
-
-    gsap.fromTo(
-      "#culangex",
-      {
-        scale: 0.7,
-      },
-      {
+      timeline.to('#culangex', {
         scale: 1,
-        delay: 4,
-        duration: 3,
-        ease: "sine.in",
-      }
-    );
+        opacity: 1,
+        duration: 4,
+        ease: 'power3.inOut'
+      })
 
-    gsap.from("#button", {
-      rotateZ: 45,
-      rotateY: 45,
-      scale: 0,
-      delay: 7,
-      duration: 1.5,
-      ease: "bounce",
-    });
+      timeline.to('#button', {
+        scale: 1,
+        opacity: 1,
+        delay: 1,
+        duration: 1,
+        ease: 'bounce.inOut'
+      })
+    }
+    window.onload = handleAfterLoad
   }, []);
 
-  const onHoverEnter = () => {
+  const onCursorEnter = () => {
     gsap.to("#button", {
-      scale: 1.1,
-      duration: 1.1,
+      scale: 1.2,
+      rotate: -4,
+      ease: 'elastic'
     });
   };
 
-  const onHoverLeave = () => {
+  const onCursorLeave = () => {
     gsap.to("#button", {
       scale: 1.0,
-      duration: 1.1,
+      rotate: 1,
+      ease: 'elastic'
     });
   };
 
   const onButtonClicked = () => {
-    gsap.to("#culangex", {
-      css: {
-        opacity: 5,
-      },
-      duration: 1.3,
-      ease: "power3",
+    gsap.to("#loader_content", {
+      opacity: 0,
+      scale: 0,
+      duration: 2.5,
+      ease: "circ.out",
     });
     gsap.to("#loader", {
-      css: {
-        opacity: 0,
-      },
+      position: 'relative',
       duration: 2,
-      ease: "power3",
-    });
-    gsap.to("#loader", {
-      css: {
-        position: "relative",
-      },
-      delay: 2,
+      delay: 0.4,
+      ease: "elastic.out",
     });
   };
 
@@ -96,18 +84,20 @@ export default function Loading() {
     >
       <div className="absolute z-40 top-0 w-full bg-gradient-to-b from-black to-black/0 h-[300px]" />
       <div className="absolute z-40 bottom-0 w-full bg-gradient-to-b from-black/0 to-black h-[300px]" />
-      <div className="absolute z-50 flex flex-col gap-5 md:gap-7 items-center justify-center">
+      <div
+        id="loader_content"
+        className="absolute z-50 flex flex-col gap-5 md:gap-7 items-center justify-center">
         <img
           src={Logo}
           alt="Culangex Logo"
           id="culangex"
-          className="h-auto w-40 md:w-64 shrink-0"
+          className="h-auto w-40 md:w-64 shrink-0 scale-0 opacity-0"
         />
         <button
           id="button"
-          className="bg-none outline-none border-none max-w-[110px] md:max-w-[150px] shrink-0"
-          onMouseEnter={onHoverEnter}
-          onMouseLeave={onHoverLeave}
+          className="bg-none outline-none border-none max-w-[110px] md:max-w-[150px] shrink-0 opacity-0 scale-0"
+          onMouseEnter={onCursorEnter}
+          onMouseLeave={onCursorLeave}
           onClick={onButtonClicked}
         >
           <img
@@ -127,7 +117,7 @@ export default function Loading() {
           src={Flower}
           alt="Flower Vase"
           id="flower_vase"
-          className="absolute bottom-0 max-w-2xl md:max-w-4xl right-0"
+          className="absolute bottom-0 max-w-2xl md:max-w-4xl translate-x-[500px] translate-y-[500px] right-0 opacity-0"
         />
       </div>
     </section>

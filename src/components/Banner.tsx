@@ -1,10 +1,11 @@
 import BannerImg from "./../assets/imgs/banner_background.webp";
 import ScrollDown from "./../assets/imgs/buttons/scrollDown.svg";
-import Waitlist from "./Waitlist";
+import JoinButton from "./../assets/imgs/buttons/join_waitlist.svg";
+import { Link } from "react-router-dom";
 
 export default function Banner() {
   return (
-    <section className="relative w-screen min-h-[600px] md:min-h-[650px] xl:min-h-[850px] bg-white flex items-end justify-center ">
+    <section className="relative w-screen min-h-[600px] md:min-h-[750px] xl:min-h-[850px] bg-white flex items-end justify-center ">
       <div className="absolute z-10 top-0 w-full bg-gradient-to-b from-black/85 to-black/0 h-[150px] md:h-[300px]" />
       <div className="absolute z-10 bottom-0 w-full bg-gradient-to-b from-black/0 to-black h-[150px] md:h-[300px]" />
       <div className="absolute z-20 gradient_overlay h-full w-full" />
@@ -20,7 +21,17 @@ export default function Banner() {
           <h1>
             Connect with Africa’s <br /> Heritage
           </h1>
-          <Waitlist />
+          <Link to={'/join_waitlist'}>
+            <button
+              className="bg-none outline-none border-none max-w-[140px] md:max-w-[150px] xl:max-w-[240px] btnHov"
+            >
+              <img
+                src={JoinButton}
+                alt="Join Waitlist"
+                className="h-auto w-full object-contain object-center"
+              />
+            </button>
+          </Link>
         </div>
         <div className="mt-12 md:mt-14 xl:mt-20">
           <a

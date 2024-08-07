@@ -14,35 +14,62 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   useGSAP(() => {
+    gsap.from('.charsi', {
+      translateY: 300,
+      rotate: 360,
+      stagger: {
+        each: 0.05,
+        from: 'random'
+      },
+
+      scrollTrigger: {
+        trigger: "#pool",
+        start: "top 85%",
+      },
+      ease: 'back.out',
+      duration: 1
+    })
+
+    gsap.to('.about_text', {
+      opacity: 1,
+      stagger: 0.5,
+      scrollTrigger: {
+        trigger: ".about_text",
+        start: "top 85%",
+      }
+    })
+
+    gsap.to('#pool', {
+      translateX: 0,
+      scrollTrigger: {
+        trigger: "#pool",
+        start: "top bottom",
+        end: 'top 30%',
+        scrub: 1,
+      },
+      ease: 'sine.inOut'
+    })
+
+    gsap.from('#light', {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".js-words",
+        start: 'top 60%',
+        end: 'top 40%',
+        scrub: 1,
+      },
+      ease: 'sine.inOut'
+    })
+
     gsap.from("#blurredDrum", {
       translateX: -200,
       scrollTrigger: {
         trigger: "#blurredDrum",
         start: "top bottom",
-        end: "top 15%",
+        end: "top 35%",
         scrub: true,
       },
       ease: "power1.inOut",
-    });
-
-    gsap.from("#pool", {
-      translateX: 200,
-      scrollTrigger: {
-        trigger: "#pool",
-        start: "top bottom",
-        end: "top 50%",
-        scrub: true,
-      },
-    });
-
-    gsap.from("#light", {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: "#light",
-        start: "top 50%",
-        end: "top 30%",
-        scrub: true,
-      },
     });
 
     gsap.from("#aje", {
@@ -50,7 +77,7 @@ export default function About() {
       scrollTrigger: {
         trigger: "#aje",
         start: "top bottom",
-        end: "top 70%",
+        end: "top 60%",
         scrub: true,
       },
     });
@@ -70,10 +97,33 @@ export default function About() {
 
       <div className="relative grid md:grid-cols-2 items-center">
         <div className="flex flex-col gap-5 relative z-40 md:order-last">
-          <h2 className="text-left xl:text-[80px]">
-            What Is <br className="hidden md:block" /> CulanGEX?
+          <h2 className="text-left xl:text-[80px] js-words">
+            <h2 className="text-left inline-block md:block"><div className="word">
+              <div className="charsi">w</div>
+              <div className="charsi">h</div>
+              <div className="charsi">a</div>
+              <div className="charsi">t</div>
+            </div>
+              <div className="word">
+                <div className="charsi">i</div>
+                <div className="charsi">s</div>
+              </div>
+            </h2>
+            <h2 className="text-left inline-block md:block">
+              <div className="word">
+                <div className="charsi">c</div>
+                <div className="charsi">u</div>
+                <div className="charsi">l</div>
+                <div className="charsi">a</div>
+                <div className="charsi">n</div>
+                <div className="charsi">g</div>
+                <div className="charsi">e</div>
+                <div className="charsi">x</div>
+                <div className="charsi">?</div>
+              </div>
+            </h2>
           </h2>
-          <p className="max-w-md">
+          <p className="max-w-md about_text opacity-35">
             Lorem ipsum dolor sit amet consectetur. Pharetra nisl vel praesent
             sit. Nisl lectus pharetra ut venenatis in gravida. Sagittis
             pellentesque convallis quam scelerisque. Ut nisl adipiscing varius
@@ -107,9 +157,9 @@ export default function About() {
       </div>
       <div
         id="pool"
-        className="absolute -right-[12%] xl:top-10 top-0 z-20 h-full w-fit hidden lg:block"
+        className="absolute -right-[12%] translate-x-[500px] xl:top-10 top-0 z-20 h-full w-fit hidden lg:block"
       >
-        <div className="relative xl:h-[1000px]  md:h-[700px] ">
+        <div className="relative xl:h-[1000px] md:h-[700px] ">
           <img
             src={LightPool}
             alt="Light Pool"
@@ -119,7 +169,7 @@ export default function About() {
             src={Light}
             alt="Light"
             id="light"
-            className="xl:h-52 md:h-32 w-auto absolute top-[9%] -left-[3%] xl:-left-[5%] opacity-20"
+            className="xl:h-52 md:h-32 w-auto absolute top-[9%] -left-[3%] xl:-left-[5%] opacity-35"
           />
         </div>
       </div>

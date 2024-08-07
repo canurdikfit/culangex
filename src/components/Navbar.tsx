@@ -9,41 +9,44 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Navbar() {
   useGSAP(() => {
     gsap.to("#logo_resize", {
-      scale: 0.35,
-      translateY: -90,
+      scale: 1,
+      translateY: 0,
       scrollTrigger: {
-        trigger: "#logo_resize",
-        start: "+=0",
-        end: "+=150",
+        trigger: "#nav_bar",
+        start: "+=50 top",
+        end: "+=160",
         scrub: true,
       },
-      ease: "circ",
+      ease: "sine.inOut",
     });
+
     gsap.to("#back_shadow", {
-      css: {
-        visibility: "visible",
-      },
+      translateY: 0,
+      opacity: 1,
+
       scrollTrigger: {
-        trigger: "#logo_resize",
-        start: "top top",
-        end: "+=250",
+        trigger: "#nav_bar",
+        start: "+=50",
+        end: "+=160",
         scrub: true,
       },
-      ease: "sine",
+      ease: "sine.inOut",
     });
   }, []);
   return (
-    <nav className="fixed top-0 inset-x-0 md:pt-16 pt-12 flex items-center justify-center z-50">
+    <nav
+      id="nav_bar"
+      className="fixed top-0 inset-x-0 pt-6 flex items-center justify-center z-50">
       <div
         id="back_shadow"
-        className="absolute z-10 top-0 w-full bg-gradient-to-b from-black to-black/0 h-[300px] invisible"
+        className="absolute z-10 top-0 opacity-0 -translate-y-[200px] w-full bg-gradient-to-b from-black to-black/0 h-full "
       />
       <div>
         <img
           src={Culangex}
           alt="Culangex Logo"
           id="logo_resize"
-          className="w-44 scale-75 h-auto relative z-20"
+          className="w-12 md:w-20 h-auto relative z-20 scale-[2.3] translate-y-[100px]"
         />
       </div>
     </nav>
