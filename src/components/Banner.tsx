@@ -1,6 +1,6 @@
 import BannerImg from "./../assets/imgs/banner_background.webp";
 import ScrollDown from "./../assets/imgs/buttons/scrollDown.svg";
-import JoinButton from "./../assets/imgs/buttons/join_waitlist.svg";
+import JoinButton from "./../assets/imgs/buttons/join_waitlist.png";
 import { Link } from "react-router-dom";
 
 export default function Banner() {

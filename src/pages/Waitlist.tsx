@@ -75,9 +75,9 @@ export default function Waitlist() {
 
 
     return (
-        <section className='h-screen w-screen overflow-hidden relative px-6 md:px-12 lg:px-16'>
+        <section className='h-[100dvh] w-screen overflow-hidden relative px-6 md:px-12 lg:px-16'>
 
-            <div className="h-screen flex items-center justify-center">
+            <div className="h-[100dvh] flex items-center justify-center">
                 <div className="absolute inset-0">
                     <img src={NightLight} alt="Night Light" className="h-full w-full object-cover object-center" />
                     <div className="bg-black/70 absolute inset-0 backdrop-blur-sm" />

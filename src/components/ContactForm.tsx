@@ -10,9 +10,9 @@ import {
     FormMessage,
 } from "./ui/form"
 import { Input } from "./ui/input"
-import EmailTag from './../assets/imgs/buttons/email_tag.svg';
-import NameTag from './../assets/imgs/buttons/name_tag.svg';
-import SendButton from "./../assets/imgs/buttons/Send_message.svg";
+import EmailTag from './../assets/imgs/buttons/email_tag.png';
+import NameTag from './../assets/imgs/buttons/name_tag.png';
+import SendButton from "./../assets/imgs/buttons/Send_message.png";
 
 import { Textarea } from "./ui/textarea"
 

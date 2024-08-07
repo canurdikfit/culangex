@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 import Background from "./../assets/imgs/culangex_loading_background.webp";
 import Logo from "./../assets/imgs/culangex.png";
 import Flower from "./../assets/imgs/flower_side.webp";
-import Button from "./../assets/imgs/buttons/Explore_button.svg";
+import Button from "./../assets/imgs/buttons/Explore_button.png";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);

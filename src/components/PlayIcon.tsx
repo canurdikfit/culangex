@@ -1,4 +1,4 @@
-import PlayIconBtn from './../assets/imgs/buttons/playIcon.svg';
+import PlayIconBtn from './../assets/imgs/buttons/playIcon.png';
 
 export default function PlayIcon() {
     return (

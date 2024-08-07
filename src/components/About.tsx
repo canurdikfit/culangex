@@ -1,5 +1,5 @@
 import AboutBackground from "./../assets/imgs/Night City.webp";
-import Get_Now from "./../assets/imgs/buttons/get_now.svg";
+import Get_Now from "./../assets/imgs/buttons/get_now.png";
 import LightPool from "./../assets/imgs/light_pool.webp";
 import LayerScale from "./../assets/imgs/layerScale-2.png";
 import Aje from "./../assets/imgs/AjeCap.webp";
