@@ -98,11 +98,11 @@ export default function Discovery() {
           <Carousel />
         </div>
 
-        <div className="palm absolute z-20 h-[300px] -bottom-[200px] md:h-[450px] md:-bottom-[400px] lg:h-[600px] right-0 lg:-bottom-[500px]">
+        <div className="palm absolute z-20 h-[300px] -bottom-[240px] md:h-[450px] md:-bottom-[400px] lg:h-[600px] right-0 lg:-bottom-[500px]">
           <img
             src={Palms}
             alt="Palm Tree"
-            className="h-full w-full object-contain object-top"
+            className="h-full w-full object-contain object-right-top"
           />
         </div>
       </div>
