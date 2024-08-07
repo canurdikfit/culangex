@@ -1,5 +1,5 @@
 import NightLight from './../assets/imgs/join_wallet.webp';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import PalmRight from './../assets/imgs/palm-right.webp';
 import Aje from './../assets/imgs/AjeCap.webp';
 import Artist from './../assets/imgs/Contact_face.webp';
@@ -11,7 +11,7 @@ import MaleIcon from './../assets/imgs/Male Memojis.png';
 
 export default function Congratulation() {
     const location = useLocation();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     useGSAP(() => {
 
         const waitlistTimeline = gsap.timeline({
