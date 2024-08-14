@@ -3,8 +3,8 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
 import French from "./../assets/imgs/french.webp";
-import Zulu from "./../assets/imgs/zulu.webp";
-import Yoruba from "./../assets/imgs/youruba.webp";
+import Zulu from "./../assets/imgs/zulu.png";
+import Yoruba from "./../assets/imgs/youruba.png";
 
 export default function Carousel() {
   return (

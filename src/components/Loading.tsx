@@ -95,7 +95,7 @@ export default function Loading() {
         />
         <button
           id="button"
-          className="bg-none outline-none border-none max-w-[110px] md:max-w-[150px] shrink-0 opacity-0 scale-0"
+          className="bg-none outline-none border-none max-w-[120px] md:max-w-[180px] shrink-0 opacity-0 scale-0"
           onMouseEnter={onCursorEnter}
           onMouseLeave={onCursorLeave}
           onClick={onButtonClicked}

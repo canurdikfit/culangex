@@ -2,24 +2,30 @@ import BannerImg from "./../assets/imgs/banner_background.webp";
 import ScrollDown from "./../assets/imgs/buttons/scrollDown.svg";
 import JoinButton from "./../assets/imgs/buttons/join_waitlist.png";
 import { Link } from "react-router-dom";
+import Countries from "./Countries";
+import Flower from "./../assets/imgs/flower_side.webp";
 
 export default function Banner() {
   return (
-    <section className="relative w-screen min-h-[600px] md:min-h-[750px] xl:min-h-[850px] bg-white flex items-end justify-center ">
+    <section className="relative w-screen min-h-[650px] md:min-h-[850px] lg:min-h-[900px] bg-white flex items-end justify-center ">
       <div className="absolute z-10 top-0 w-full bg-gradient-to-b from-black/85 to-black/0 h-[150px] md:h-[300px]" />
       <div className="absolute z-10 bottom-0 w-full bg-gradient-to-b from-black/0 to-black h-[150px] md:h-[300px]" />
       <div className="absolute z-20 gradient_overlay h-full w-full" />
-
       <img
         src={BannerImg}
         alt="Banner Image"
         className="absolute h-full w-full object-cover object-bottom"
       />
-
+      <img
+        src={Flower}
+        alt="Flower Vase"
+        className="absolute bottom-0 lg:bottom-[7%] max-w-2xl md:max-w-4xl right-0 z-0"
+      />
       <div className="relative z-20 flex flex-col items-center justify-center">
         <div className="flex flex-col items-center justify-center gap-5 md:gap-7 xl:gap-10">
           <h1>
-            Connect with Africa’s <br /> Heritage
+            Transform the way you  <br />
+            learn languages
           </h1>
           <Link to={'/join_waitlist'}>
             <button
@@ -33,7 +39,8 @@ export default function Banner() {
             </button>
           </Link>
         </div>
-        <div className="mt-12 md:mt-14 xl:mt-20">
+        <Countries />
+        <div>
           <a
             href=""
             className="group flex items-center justify-center flex-col gap-1 md:gap-4"

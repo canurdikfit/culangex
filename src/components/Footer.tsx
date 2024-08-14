@@ -1,56 +1,94 @@
-import TwitterBtn from "./../assets/imgs/buttons/twitter.png";
-import YoutubeBtn from "./../assets/imgs/buttons/youtube.png";
-import LinkedInBtn from "./../assets/imgs/buttons/linkedin.png";
-import InstagramBtn from "./../assets/imgs/buttons/instagram.png";
-import CulangexLogo from "./../assets/imgs/culangex.png";
+import CyndyImg from './../assets/imgs/cyndy.webp';
 import AnimatedCursor from "react-animated-cursor"
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import FooterBackground from './../assets/imgs/FooterBg.webp';
 
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
+  useGSAP(() => {
+    gsap.from('.foot', {
+      translateY: 300,
+      rotate: 360,
+      stagger: {
+        each: 0.05,
+        from: 'random'
+      },
+
+      scrollTrigger: {
+        trigger: ".js-footer",
+        start: "top 95%",
+      },
+      ease: 'back.out',
+      duration: 1
+    })
+  }, []);
+
+
   return (
-    <section className="px-6 md:px-14 lg:px-20 py-5 bg-[#1A1F37]">
-      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 items-center justify-between">
-        <div className="flex items-center justify-center md:justify-start">
-          <a href="" className="shrink-0">
-            <img src={TwitterBtn} alt="Twitter Icon" className="h-24 w-auto" />
-          </a>
-          <a href="" className="shrink-0 -ms-5">
-            <img src={YoutubeBtn} alt="Youtube Icon" className="h-24 w-auto" />
-          </a>
-          <a href="" className="shrink-0 -ms-5">
-            <img
-              src={LinkedInBtn}
-              alt="LinkedIn Icon"
-              className="h-24 w-auto"
-            />
-          </a>
-          <a href="" className="shrink-0 -ms-5">
-            <img
-              src={InstagramBtn}
-              alt="Instagram Icon"
-              className="h-24 w-auto"
-            />
-          </a>
-          <a
-            href=""
-            className="ms-2 underline text-[#B6F6FF] underline-offset-1 hidden md:inline-block"
-          >
-            Careers
-          </a>
+    <section className="relative">
+      <div className="absolute z-10 bg-black backdrop-blur h-full w-full opacity-60" />
+      <img
+        src={FooterBackground}
+        alt="Banner Image"
+        className="absolute h-full w-full object-cover object-center"
+      />
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-5 items-center justify-between relative z-20 px-6 md:px-14 lg:px-20 pt-20">
+
+        <div>
+          <h2>
+            <h2 className="uppercase text-left js-footer md:text-3xl lg:text-7xl">
+              <div className="word">
+                <div className="foot">i</div>
+                <div className="foot">n</div>
+                <div className="foot">-</div>
+                <div className="foot">g</div>
+                <div className="foot">a</div>
+                <div className="foot">m</div>
+                <div className="foot">e</div>
+
+              </div>
+              <div className="word">
+                <div className="foot">t</div>
+                <div className="foot">i</div>
+                <div className="foot">c</div>
+                <div className="foot">k</div>
+                <div className="foot">e</div>
+                <div className="foot">t</div>
+                <div className="foot">s</div>
+              </div>
+            </h2>
+            <h2 className="uppercase text-left js-footer md:text-3xl lg:text-7xl">
+              <div className="word">
+                <div className="foot">&</div>
+              </div>
+              <div className="word">
+                <div className="foot">c</div>
+                <div className="foot">u</div>
+                <div className="foot">r</div>
+                <div className="foot">r</div>
+                <div className="foot">e</div>
+                <div className="foot">n</div>
+                <div className="foot">c</div>
+                <div className="foot">i</div>
+                <div className="foot">e</div>
+                <div className="foot">s</div>
+              </div>
+            </h2>
+          </h2>
+          <p className='max-w-lg mt-2'>
+            Generate unique discount codes to redeem gift cards, discounts on flights, hotels, Uber, and tour guides.
+          </p>
         </div>
-        <div className="flex flex-col gap-5 items-center justify-center xl:justify-center md:justify-end -order-last md:order-1">
-          <img src={CulangexLogo} alt="Logo Icon" className="w-20 h-auto" />
-          <a
-            href=""
-            className="ms-2 underline text-[#B6F6FF] underline-offset-1 md:hidden block"
-          >
-            Careers
-          </a>
-        </div>
-        <div className="md:col-span-2 xl:col-span-1 md:order-2">
-          <h6 className="text-sm md:text-base lg:text-lg text-center xl:text-end">
-            All Rights Reserved {new Date().getFullYear()} | culangex
-          </h6>
+
+        <div className="relative md:min-h-[400px] xl:min-h-[550px]">
+          <img
+            src={CyndyImg}
+            alt="Contact"
+            className="md:absolute right-0 lg:-bottom-0 md:-bottom-0"
+          />
         </div>
       </div>
 

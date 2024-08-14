@@ -36,7 +36,7 @@ export default function Contact() {
             <img
               src={ContactImg}
               alt="Contact"
-              className="absolute right-0 -bottom-[35%]"
+              className="absolute right-0 lg:-bottom-[15%] md:-bottom-[5%]"
             />
           </div>
         </div>

@@ -14,7 +14,7 @@ export default function Navbar() {
       scrollTrigger: {
         trigger: "#nav_bar",
         start: "+=50 top",
-        end: "+=160",
+        end: "+=120",
         scrub: true,
       },
       ease: "sine.inOut",

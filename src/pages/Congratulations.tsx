@@ -2,18 +2,18 @@ import NightLight from './../assets/imgs/join_wallet.webp';
 import { useLocation } from 'react-router-dom';
 import PalmRight from './../assets/imgs/palm-right.webp';
 import Aje from './../assets/imgs/AjeCap.webp';
-import Artist from './../assets/imgs/Contact_face.webp';
+import Artist from './../assets/imgs/lilly-mist.png';
 import LightPool from "./../assets/imgs/light_pool.webp";
 import Light from "./../assets/imgs/light-2.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import MaleIcon from './../assets/imgs/Male Memojis.png';
+import AnimatedCursor from 'react-animated-cursor';
 
 export default function Congratulation() {
     const location = useLocation();
     // const navigate = useNavigate();
     useGSAP(() => {
-
         const waitlistTimeline = gsap.timeline({
             repeat: 0, repeatDelay: 0
         })
@@ -23,7 +23,7 @@ export default function Congratulation() {
             opacity: 0,
         }, {
             scale: 1.5,
-            opacity: 1,
+            opacity: 0.4,
             yoyo: true,
             duration: 2,
             repeat: -1,
@@ -35,7 +35,7 @@ export default function Congratulation() {
         }, {
             scale: 2.5,
             yoyo: true,
-            opacity: 1,
+            opacity: 0.4,
             duration: 2,
             repeat: -1,
             ease: 'power1.inOut'
@@ -45,7 +45,7 @@ export default function Congratulation() {
             opacity: 0,
         }, {
             scale: 3.5,
-            opacity: 1,
+            opacity: 0.4,
             yoyo: true,
             duration: 2,
             repeat: -1,
@@ -81,16 +81,16 @@ export default function Congratulation() {
     return (
         <section className='h-[100dvh] w-screen overflow-hidden relative px-6 md:px-12 lg:px-16'>
 
-            <div className="h-[100dvh] flex items-start justify-center pt-[220px] md:items-center lg:items-start lg:pt-24">
+            <div className="h-[100dvh] flex items-start justify-center pt-[220px] md:pt-0 md:items-center">
                 <div className="absolute inset-0">
                     <img src={NightLight} alt="Night Light" className="h-full w-full object-cover object-center" />
-                    <div className="bg-black/70 absolute inset-0 backdrop-blur-sm" />
+                    <div className="bg-black/70 absolute inset-0 z-10 backdrop-blur-sm" />
                 </div>
 
-                <img src={PalmRight} alt="Palm" className="xl:h-[500px] h-[350px] w-auto absolute xl:-bottom-[200px] -bottom-[130px] -left-14" />
+                <img src={PalmRight} alt="Palm" className="xl:h-[500px] h-[350px] w-auto absolute xl:-bottom-[200px] -bottom-[130px] md:z-10 -left-14" />
 
-                <img src={Aje} alt="Artist" className="xl:h-[400px] h-[300px] w-auto absolute bottom-0 z-10 -right-[120px]" />
-                <img src={Artist} alt="Artist" className="xl:w-[500px] w-[370px] h-auto absolute -bottom-[200px] z-10 right-10" />
+                <img src={Artist} alt="Artist" className="xl:h-[600px] h-[500px] w-auto absolute md:z-10 -right-20 -bottom-[20%]" />
+                <img src={Aje} alt="Artist" className="xl:h-[500px] h-[400px] w-auto absolute -bottom-[10%] md:z-10 right-0" />
 
                 <div
                     id="waitlistpool"
@@ -127,6 +127,34 @@ export default function Congratulation() {
                         {location.state.email}
                     </button>
                 </div>
+            </div>
+
+            <div className="hidden lg:block">
+
+                <AnimatedCursor
+                    innerSize={8}
+                    outerSize={35}
+                    color='182, 246, 255'
+                    outerAlpha={0.2}
+                    innerScale={0.7}
+                    outerStyle={{
+                        mixBlendMode: 'exclusion'
+                    }}
+                    outerScale={1.7}
+                    clickables={[
+                        'a',
+                        'input[type="text"]',
+                        'input[type="email"]',
+                        'input[type="number"]',
+                        'input[type="submit"]',
+                        'input[type="image"]',
+                        'label[for]',
+                        'select',
+                        'textarea',
+                        'button',
+                        '.link'
+                    ]}
+                />
             </div>
         </section>
     )

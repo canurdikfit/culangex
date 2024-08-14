@@ -86,12 +86,8 @@ export default function Discovery() {
                 </div>
               </h2>
             </h2>
-            <p className="max-w-sm">
-              Lorem ipsum dolor sit amet consectetur. Pharetra nisl vel praesent
-              sit. Nisl lectus pharetra ut venenatis in gravida. Sagittis
-              pellentesque convallis quam scelerisque. Ut nisl adipiscing varius
-              sed fames. Sagittis blandit turpis sit tincidunt nulla tellus enim
-              sit. Consectetur egestas tortor fermentum blandit{" "}
+            <p className="max-w-lg">
+              Embark on a journey through the rich and diverse tapestry of global cultures. From vibrant festivals and traditional music to unique culinary delights and historical landmarks, immerse yourself in the myriad expressions of human creativity and heritage. Experience the stories, customs, and traditions that make each culture distinct, and broaden your horizons by exploring the world’s cultural treasures.
             </p>
           </div>
 

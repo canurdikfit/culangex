@@ -1,5 +1,5 @@
 import AboutBackground from "./../assets/imgs/Night City.webp";
-import Get_Now from "./../assets/imgs/buttons/get_now.png";
+import Get_Now from "./../assets/imgs/buttons/join_waitlist.png";
 import LightPool from "./../assets/imgs/light_pool.webp";
 import LayerScale from "./../assets/imgs/layerScale-2.png";
 import Aje from "./../assets/imgs/AjeCap.webp";
@@ -9,6 +9,7 @@ import { gsap } from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,22 +125,24 @@ export default function About() {
             </h2>
           </h2>
           <p className="max-w-md about_text opacity-35">
-            Lorem ipsum dolor sit amet consectetur. Pharetra nisl vel praesent
-            sit. Nisl lectus pharetra ut venenatis in gravida. Sagittis
-            pellentesque convallis quam scelerisque. Ut nisl adipiscing varius
-            sed fames. Sagittis blandit turpis sit tincidunt nulla tellus enim
-            sit. Consectetur egestas tortor fermentum blandit{" "}
+            Culangex is an innovative language learning practical language application. Our mission is to platform that merges cultural immersion with
+            help users master new languages as if they were
+            learning in real-life contexts, seamlessly integrating
+            cultural elements to enhance both language skills
+            and cultural understanding
           </p>
-          <button
-            id="button"
-            className="bg-none outline-none border-none max-w-[130px] xl:max-w-[180px] shrink-0 btnHov"
-          >
-            <img
-              src={Get_Now}
-              alt="Join Waitlist"
-              className="h-auto w-full object-contain object-center"
-            />
-          </button>
+          <Link to={'/join_waitlist'}>
+            <button
+              id="button"
+              className="bg-none outline-none border-none max-w-[130px] xl:max-w-[180px] shrink-0 btnHov"
+            >
+              <img
+                src={Get_Now}
+                alt="Join Waitlist"
+                className="h-auto w-full object-contain object-center"
+              />
+            </button>
+          </Link>
         </div>
         <div className="relative z-20 overflow-hidden">
           <img
