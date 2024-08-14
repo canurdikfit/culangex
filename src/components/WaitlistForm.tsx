@@ -26,6 +26,7 @@ import { useMailChimpForm } from "use-mailchimp-form";
 import ClipLoader from "react-spinners/ClipLoader"
 import { useNavigate } from "react-router"
 import { CountriesFlag } from "./Countries";
+import { useState } from "react";
 
 
 const formSchema = z.object({
@@ -39,11 +40,11 @@ const formSchema = z.object({
 
 
 export default function WaitlistForm() {
+    const [loading, setLoading] = useState<boolean>(false)
     const navigate = useNavigate()
-    const url = `https://gmail.us14.list-manage.com/subscribe/post?u=${import.meta.env.VITE_MAIL_FORM_API_POST}&amp;id=${import.meta.env.VITE_MAIL_FORM_API_ID}&amp;f_id=${import.meta.env.VITE_MAIL_FORM_API_FORM_ID}`;
+    const url = `https://gmail.us14.list-manage.com/subscribe/post?u=1da928b0b0c9bcd3792f1f9b8&amp;id=${import.meta.env.VITE_MAIL_FORM_API_ID}&amp;f_id=00d2b8e5f0`;
 
     const {
-        loading,
         success,
         error,
         handleSubmit,
@@ -60,14 +61,18 @@ export default function WaitlistForm() {
     })
 
     function onSubmit(values: z.infer<typeof formSchema>) {
-        handleSubmit(values);
+        setLoading(true)
+        handleSubmit(values)
         setTimeout(() => {
-            if (success) {
-                navigate('/suscribed', { replace: true, state: { email: values.EMAIL } })
-            }
-        }, 1500)
+            setLoading(false)
 
+            navigate('/suscribed', { replace: true, state: { email: values.EMAIL } })
+
+        }, 2000)
     }
+
+    console.log(success)
+
 
     return (
         <Form {...form}>
