@@ -1,10 +1,10 @@
 import { useGSAP } from "@gsap/react";
-import Loading from "../components/Loading";
 import Navbar from "../components/Navbar";
-import Banner from "../components/Banner";
 import Welcome from "../components/Welcome";
 import Footer from "../components/Footer";
 import gsap from "gsap";
+import BackToTop from "../components/BackToTop";
+import DisplayBanner from "../components/DisplayBanner";
 
 function Home() {
     useGSAP(() => {
@@ -17,11 +17,11 @@ function Home() {
 
     return (
         <main className="main w-screen overflow-hidden">
-            <Loading />
             <Navbar />
-            <Banner />
+            <DisplayBanner />
             <Welcome />
             <Footer />
+            <BackToTop />
         </main>
     );
 }
