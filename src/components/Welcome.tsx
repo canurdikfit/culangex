@@ -2,7 +2,7 @@ import WelocomeBackground from "./../assets/imgs/welcomeBackground.webp";
 import VideoDisplayer from "./VideoDisplayer";
 import LayerScale from "./../assets/imgs/layerScale.webp";
 import LillyMist from "./../assets/imgs/lilly-mist.png";
-import Blurred from "./../assets/imgs/blurred_staff.webp";
+import Blurred from "./../assets/imgs/blurred_staff.png";
 import About from "./About";
 import Discovery from "./Discovery";
 import { gsap } from "gsap";
@@ -43,14 +43,14 @@ export default function Welcome() {
   }, []);
 
   return (
-    <section className="overflow-visible">
+    <section className="overflow-visible" id="scroll" >
       <div className="mt-36 relative xl:min-h-[800px]">
-        <div className="absolute z-10 top-0 w-full bg-gradient-to-b from-black/85 to-black/0 h-[150px] md:h-[300px]" />
-        <div className="absolute z-10 h-full w-[20%] right-0 md:-right-[5%] bg-[#000000] blur-xl" />
+        <div className="absolute z-10 top-0 w-full bg-gradient-to-b from-black to-black/0 h-[150px]" />
+        <div className="absolute z-20 bottom-0 w-full bg-gradient-to-t from-black to-black/0 h-[150px] md:h-[300px]" />
         <div className="absolute z-10 top-[50%] w-full h-auto">
           <img src={LayerScale} alt="Layer Blur" className="h-auto w-screen" />
         </div>
-        <div className="absolute z-20 bg-black backdrop-blur h-full w-full opacity-75" />
+        <div className="absolute z-20 bg-black backdrop-blur h-full w-full opacity-35" />
         <img
           src={WelocomeBackground}
           alt="Banner Image"

@@ -1,6 +1,5 @@
 import DiscoveryBackground from "./../assets/imgs/Discovery_banner.webp";
 import Carousel from "./Carousel";
-import Contact from "./Contact";
 import Palms from "./../assets/imgs/palm.webp";
 import { gsap } from "gsap";
 
@@ -36,9 +35,9 @@ export default function Discovery() {
         alt="Banner Image"
         className="absolute h-full w-full object-cover object-center"
       />
-      <div className="px-6 md:px-14 lg:px-20 flex flex-col items-center relative">
+      <div className="px-6 md:px-14 lg:px-20 flex flex-col items-center relative pb-32">
         <div className="absolute z-10 top-0 w-full bg-gradient-to-b from-black via-black/65 to-black/0 h-[150px] md:h-[300px]" />
-
+        <div className="absolute bottom-0 w-full bg-gradient-to-b from-black/0 to-black h-[150px] lg:h-[300px]" />
         <div className="relative max-w-6xl w-full mx-auto grid md:grid-cols-2 items-center z-20 pt-20 lg:pt-32 xl:pt-40 gap-y-16">
           <div className="flex flex-col gap-5">
             <h2 className="text-left md:text-4xl lg:text-6xl js-chars">
@@ -94,7 +93,7 @@ export default function Discovery() {
           <Carousel />
         </div>
 
-        <div className="palm absolute z-20 h-[300px] -bottom-[240px] md:h-[450px] md:-bottom-[400px] lg:h-[600px] right-0 lg:-bottom-[500px]">
+        <div className="palm absolute z-20 h-[300px] lg:-bottom-[240px] md:-bottom-[150px] -bottom-20 md:h-[450px] lg:h-[600px] right-0">
           <img
             src={Palms}
             alt="Palm Tree"
@@ -103,7 +102,7 @@ export default function Discovery() {
         </div>
       </div>
 
-      <Contact />
+
     </div>
   );
 }

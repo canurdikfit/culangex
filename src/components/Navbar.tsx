@@ -9,11 +9,11 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Navbar() {
   useGSAP(() => {
     gsap.to("#logo_resize", {
-      scale: 1,
+      scale: 1.5,
       translateY: 0,
       scrollTrigger: {
         trigger: "#nav_bar",
-        start: "+=50 top",
+        start: "+=40 top",
         end: "+=120",
         scrub: true,
       },
@@ -46,7 +46,7 @@ export default function Navbar() {
           src={Culangex}
           alt="Culangex Logo"
           id="logo_resize"
-          className="w-12 md:w-20 h-auto relative z-20 scale-[2.3] translate-y-[100px]"
+          className="w-20 md:w-28 h-auto relative z-20 scale-[2.3] translate-y-[70px]"
         />
       </div>
     </nav>

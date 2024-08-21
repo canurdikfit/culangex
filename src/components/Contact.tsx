@@ -1,4 +1,4 @@
-import ContactImg from "./../assets/imgs/Contact_face.webp";
+import CyndyImg from './../assets/imgs/cyndy-alt.png';
 import ContactBG from "./../assets/imgs/contact_bg.webp";
 import { gsap } from "gsap";
 
@@ -29,18 +29,18 @@ export default function Contact() {
 
 
   return (
-    <div className="relative z-20">
-      <div className="relative z-20 grid md:grid-cols-2 items-center w-full mt-20 md:mt-40 pb-5">
+    <div className="relative z-20 pt-10 -mt-10">
+      <div className="relative z-20 grid md:grid-cols-2 items-center w-full pb-5">
         <div className="hidden md:block">
           <div className="relative md:min-h-[400px] xl:min-h-[550px]">
             <img
-              src={ContactImg}
+              src={CyndyImg}
               alt="Contact"
-              className="absolute right-0 lg:-bottom-[15%] md:-bottom-[5%]"
+              className="absolute right-0 md:-bottom-[5%]"
             />
           </div>
         </div>
-        <div className="grid lg:gap-20 md:gap-16 gap-14 pl-6 md:pl-0 pr-6 md:pr-14 lg:pr-20">
+        <div className="grid gap-7 pl-6 md:pl-0 pr-6 md:pr-14 lg:pr-20">
           <h2 className="uppercase text-left js-contact">
             <div className="word">
               <div className="contaxt">c</div>
@@ -59,7 +59,7 @@ export default function Contact() {
           <ContactForm />
         </div>
       </div>
-      <div className="absolute z-10 w-screen md:h-[84%] h-[87%] xl:h-[75%] left-0 bottom-0">
+      <div className="absolute z-10 w-screen md:h-[95%] h-full left-0 bottom-0">
         <img
           src={ContactBG}
           alt="Contact"

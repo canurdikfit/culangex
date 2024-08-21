@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import LanguageTag from './../assets/imgs/language.png';
 import CountryTag from './../assets/imgs/earth.png';
-
+import { Country } from 'country-state-city';
 import {
     Form,
     FormControl,
@@ -25,9 +25,7 @@ import SubmitBtn from './../assets/imgs/buttons/Submit.png';
 import { useMailChimpForm } from "use-mailchimp-form";
 import ClipLoader from "react-spinners/ClipLoader"
 import { useNavigate } from "react-router"
-import { CountriesFlag } from "./Countries";
-import { useState } from "react";
-
+import { useMemo, useState } from "react";
 
 const formSchema = z.object({
     FNAME: z.string().min(5, { message: "Add a valid name." }),
@@ -41,11 +39,11 @@ const formSchema = z.object({
 
 export default function WaitlistForm() {
     const [loading, setLoading] = useState<boolean>(false)
+    const Countries = useMemo(() => Country.getAllCountries(), [])
     const navigate = useNavigate()
     const url = `https://gmail.us14.list-manage.com/subscribe/post?u=1da928b0b0c9bcd3792f1f9b8&amp;id=${import.meta.env.VITE_MAIL_FORM_API_ID}&amp;f_id=00d2b8e5f0`;
 
     const {
-        success,
         error,
         handleSubmit,
     } = useMailChimpForm(url);
@@ -70,9 +68,6 @@ export default function WaitlistForm() {
 
         }, 2000)
     }
-
-    console.log(success)
-
 
     return (
         <Form {...form}>
@@ -125,8 +120,8 @@ export default function WaitlistForm() {
                                 </FormControl>
                                 <SelectContent className="bg-[#505C81] shadow-inner shadow-black/25 rounded-xl border-0">
                                     {
-                                        CountriesFlag.map((items, idx) => (
-                                            <SelectItem key={idx} value={items.alt}>{items.alt}</SelectItem>
+                                        Countries.map((items, idx) => (
+                                            <SelectItem key={idx} value={items.name}>{items.name}</SelectItem>
                                         ))
                                     }
                                 </SelectContent>
