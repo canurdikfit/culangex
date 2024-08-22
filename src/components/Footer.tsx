@@ -2,7 +2,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AnimatedCursor from "react-animated-cursor"
 import FooterBackground from './../assets/imgs/FooterBg.webp';
 import TwitterBtn from "./../assets/imgs/buttons/twitter.png";
 import YoutubeBtn from "./../assets/imgs/buttons/youtube.png";
@@ -13,9 +12,14 @@ import Contact from './Contact';
 import Card1 from './../assets/imgs/cards/challenge-completion.png';
 import Card2 from './../assets/imgs/cards/quest-completion.png';
 import Card3 from './../assets/imgs/cards/level-completion.png';
-import Badge1 from './../assets/imgs/badges/badge-1.png';
-import Badge2 from './../assets/imgs/badges/badge-2.png';
-import Badge3 from './../assets/imgs/badges/badge-3.png';
+import Badge from './../assets/imgs/badges/badge.png';
+import CulangexText from './../assets/imgs/badges/culangex-coupon.svg';
+import CollectCoupon from './../assets/imgs/buttons/collecet_coupon.png';
+import Flight from './../assets/imgs/badges/flight.png';
+import Ride from './../assets/imgs/badges/ride.png';
+import Tour from './../assets/imgs/badges/tour.png';
+import Home from './../assets/imgs/badges/home.png';
+import Discount from './../assets/imgs/badges/discount.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -108,22 +112,71 @@ export default function Footer() {
               </h2>
             </h2>
             <div className="pt-14">
-              <div className="flex items-center gap-5 justify-center aspect-auto">
+              <div className="flex items-center gap-6 md:gap-10 lg:gap-20 justify-center">
 
-                <img src={Card1} alt="Cards" className="lg:w-72 md:w-52 h-auto card" />
+                <div className="hover:-translate-y-10 duration-500 ease-in-out">
+                  <img src={Card1} alt="Cards" className="lg:w-60 md:w-52 w-40 h-auto card" />
+                </div>
 
-                <img src={Card2} alt="Cards" className="lg:w-72 md:w-52 h-auto card" />
+                <div className="hover:-translate-y-10 duration-500 ease-in-out">
+                  <img src={Card2} alt="Cards" className="lg:w-60 md:w-52 w-40 h-auto card" />
+                </div>
 
-                <img src={Card3} alt="Cards" className="lg:w-72 md:w-52 h-auto card" />
+                <div className="hover:-translate-y-10 duration-500 ease-in-out">
+                  <img src={Card3} alt="Cards" className="lg:w-60 md:w-52 w-40 h-auto card" />
+                </div>
 
               </div>
-              <p className='max-w-2xl mx-auto mt-2 text-center'>
-                Earn points in-game and redeem them for discounts on flights, hotels, and tours. Turn your gaming achievements into real-world travel savings!
-              </p>
-              <div className="flex items-center justify-center gap-8 mt-8">
-                <img src={Badge1} alt="Badge" className="w-16 h-auto badge" />
-                <img src={Badge2} alt="Badge" className="w-16 h-auto badge" />
-                <img src={Badge3} alt="Badge" className="w-16 h-auto badge" />
+
+              <div className="bg-[#313556]/35 backdrop-blur-sm max-w-5xl mx-auto rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden">
+                <div className="bg-[#252E4F]/45 backdrop-blur-sm px-3 md:px-5 xl:px-12 py-2 flex items-center justify-center md:justify-between flex-wrap">
+                  <img src={CulangexText} alt="Coupon Code" className="h-10 lg:h-16 w-auto" />
+                  <div className="flex items-start gap-2 lg:gap-3 justify-start mx-auto">
+                    <img src={Badge} className="h-10 md:h-12 lg:h-14 w-auto" alt="Badge" />
+                    <p className="text-base md:text-lg lg:text-xl mt-1 md:mt-2 text-[#CCCCCC]">
+                      Available:
+                    </p>
+                    <p className="text-base md:text-lg lg:text-xl mt-1 md:mt-2 font-bold">
+                      54,000cx points
+                    </p>
+                  </div>
+                  <img src={CollectCoupon} className="h-10 md:h-12 lg:h-16 w-auto hover:-translate-y-1.5 duration-500 ease-in-out" alt="Coupon" />
+                </div>
+                <div className="py-5 px-8 md:px-10 lg:px-12 flex items-center flex-wrap gap-3 justify-between">
+                  <img src={Discount} className="h-20 md:h-24 xl:h-32 w-auto" alt="Discount" />
+                  <div className="max-w-xl xl:max-w-2xl">
+                    <div className="flex items-center flex-wrap gap-4  justify-between">
+                      {
+                        [
+                          {
+                            icon: Flight,
+                            text: 'flight'
+                          },
+                          {
+                            icon: Ride,
+                            text: 'Rides'
+                          },
+                          {
+                            icon: Tour,
+                            text: 'Tour Guides'
+                          },
+                          {
+                            icon: Home,
+                            text: 'Hotels'
+                          }
+                        ].map((items, idx) => (
+                          <div key={idx} className="flex items-center justify-start gap-2">
+                            <img src={items.icon} alt="icon" className="h-5 md:h-7 w-auto" />
+                            <p className="text-base md:text-xl capitalize">{items.text}</p>
+                          </div>
+                        ))
+                      }
+                    </div>
+                    <p className="font-medium my-2">
+                      Earn points in-game and redeem them for discounts on flights, hotels, and tours, to country of the language you are learning. Turn your gaming achievements into real-world travel savings!
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -132,33 +185,6 @@ export default function Footer() {
         </div>
 
         <Contact />
-
-        <div className="hidden lg:block">
-          <AnimatedCursor
-            innerSize={8}
-            outerSize={35}
-            color='182, 246, 255'
-            outerAlpha={0.2}
-            innerScale={0.7}
-            outerStyle={{
-              mixBlendMode: 'exclusion'
-            }}
-            outerScale={1.7}
-            clickables={[
-              'a',
-              'input[type="text"]',
-              'input[type="email"]',
-              'input[type="number"]',
-              'input[type="submit"]',
-              'input[type="image"]',
-              'label[for]',
-              'select',
-              'textarea',
-              'button',
-              '.link'
-            ]}
-          />
-        </div>
       </section>
 
 

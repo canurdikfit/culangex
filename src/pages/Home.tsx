@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import gsap from "gsap";
 import BackToTop from "../components/BackToTop";
 import DisplayBanner from "../components/DisplayBanner";
+import Cursor from "../components/Cursor";
 
 function Home() {
     useGSAP(() => {
@@ -22,7 +23,9 @@ function Home() {
             <Welcome />
             <Footer />
             <BackToTop />
+            <Cursor />
         </main>
+
     );
 }
 

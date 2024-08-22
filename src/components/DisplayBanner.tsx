@@ -52,10 +52,9 @@ export default function DisplayBanner() {
                 </div>
 
                 <DisplayArtists />
-                <div className="absolute bottom-24 w-full bg-gradient-to-b from-black/0 to-black h-[150px] lg:h-[300px]" />
-                <div className="absolute h-24 w-full bottom-0 inset-x-0 bg-black" />
+
             </div>
-            <div className="relative z-20 flex flex-col justify-between min-h-[750px] md:min-h-[850px] lg:min-h-[1000px] pt-[250px] md:pt-[300px]">
+            <div className="relative flex z-20 flex-col justify-between min-h-[750px] md:min-h-[850px] lg:min-h-[1000px] pt-[250px] md:pt-[300px]">
                 <div className="flex flex-col items-center justify-center">
                     <div className="flex flex-col items-center justify-center gap-5 ">
                         <h1>

@@ -56,7 +56,7 @@ export default function Welcome() {
           alt="Banner Image"
           className="absolute h-full w-full object-cover object-bottom"
         />
-        <div className="absolute -right-20 md:-right-24 lg:-right-12 z-30 h-full">
+        <div className="absolute -right-20 md:-right-24 lg:-right-12 z-30 h-5/6 top-[5%]">
           <img
             src={LillyMist}
             alt="Lilly Mist"
