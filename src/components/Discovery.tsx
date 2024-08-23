@@ -1,6 +1,6 @@
 import DiscoveryBackground from "./../assets/imgs/Discovery_banner.webp";
 import Carousel from "./Carousel";
-import Palms from "./../assets/imgs/palm.webp";
+import Palms from "./../assets/imgs/palm-alt.gif";
 import { gsap } from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";

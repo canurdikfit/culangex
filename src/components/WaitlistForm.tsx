@@ -32,8 +32,8 @@ const formSchema = z.object({
     EMAIL: z.string()
         .min(1, { message: "This field has to be filled." })
         .email("This is not a valid email."),
-    COUNTRY: z.string().min(1, { message: "Select a Country" }),
-    LANGUAGE: z.string().min(1, { message: "Type a Preferred Language" })
+    COUNTRY: z.string(),
+    LANGUAGE: z.string()
 })
 
 

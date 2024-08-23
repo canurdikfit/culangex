@@ -4,7 +4,7 @@ import LightPool from "./../assets/imgs/light_pool.webp";
 import LayerScale from "./../assets/imgs/layerScale-2.png";
 import Aje from "./../assets/imgs/AjeCap.webp";
 import Light from "./../assets/imgs/light.png";
-import BlurredDrum from "./../assets/imgs/Drum.webp";
+import BlurredDrum from "./../assets/imgs/bgdrum.gif";
 import { gsap } from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -177,7 +177,7 @@ export default function About() {
         </div>
       </div>
       <div className="absolute z-20 bottom-0 w-full bg-[#030F13] blur-2xl h-[150px] md:h-[300px]" />
-      <div className="absolute -left-[20%] xl:-left-[12%] -bottom-20 md:-bottom-40 lg:-bottom-[250px] z-30 h-[250px] md:h-[400px] xl:h-[500px]">
+      <div className="absolute -left-[16%] xl:-left-[8%] -bottom-20 md:-bottom-40 lg:-bottom-[250px] z-30 h-[250px] md:h-[400px] xl:h-[500px] rotate-[33deg]">
         <img
           src={BlurredDrum}
           alt="Blurred"

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import DisplayBannerBg from './../assets/imgs/displayBanner.webp';
-import PalmTree from './../assets/imgs/palm-right.webp';
+import PalmTree from './../assets/imgs/palmtree.gif';
 import LightPool from "./../assets/imgs/light_pool.webp";
 import Light from "./../assets/imgs/light-2.png";
 import LightPurple from './../assets/imgs/light-purple.png';

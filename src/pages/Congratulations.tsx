@@ -1,6 +1,6 @@
 import NightLight from './../assets/imgs/join_wallet.webp';
 import { useLocation } from 'react-router-dom';
-import PalmRight from './../assets/imgs/palm-right.webp';
+import PalmRight from './../assets/imgs/palmtree.gif';
 import Aje from './../assets/imgs/AjeCap.webp';
 import Artist from './../assets/imgs/lilly-mist.png';
 import LightPool from "./../assets/imgs/light_pool.webp";
