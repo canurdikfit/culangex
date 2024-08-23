@@ -44,7 +44,7 @@ export default function Welcome() {
 
   return (
     <section className="overflow-visible" id="scroll" >
-      <div className="mt-36 relative xl:min-h-[800px]">
+      <div className="mt-36 relative xl:min-h-[800px] flex items-center justify-center">
         <div className="absolute z-10 top-0 w-full bg-gradient-to-b from-black to-black/0 h-[150px]" />
         <div className="absolute z-20 bottom-0 w-full bg-gradient-to-t from-black to-black/0 h-[150px] md:h-[300px]" />
         <div className="absolute z-10 top-[50%] w-full h-auto">
@@ -56,13 +56,18 @@ export default function Welcome() {
           alt="Banner Image"
           className="absolute h-full w-full object-cover object-bottom"
         />
-        <div className="absolute -right-20 md:-right-24 lg:-right-12 z-30 h-5/6 top-[5%]">
-          <img
-            src={LillyMist}
-            alt="Lilly Mist"
-            className="h-full w-auto object-contain"
-          />
+
+        <div className="max-w-[1440px] mx-auto absolute w-full h-full">
+          <div className="absolute -right-20 md:-right-24 lg:-right-12 z-30 h-5/6 top-[5%]">
+            <img
+              src={LillyMist}
+              alt="Lilly Mist"
+              className="h-full w-auto object-contain"
+            />
+          </div>
+
         </div>
+
         <div
           id="blurred"
           className="absolute left-0 md:-bottom-48 xl:-bottom-[250px] z-30 h-52 -bottom-28 md:h-[300px] xl:h-[500px] -translate-x-60">

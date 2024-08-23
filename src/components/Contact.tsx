@@ -36,7 +36,7 @@ export default function Contact() {
             <img
               src={CyndyImg}
               alt="Contact"
-              className="absolute right-0 md:-bottom-[5%]"
+              className="absolute max-h-[650px] right-0 md:-bottom-[5%]"
             />
           </div>
         </div>

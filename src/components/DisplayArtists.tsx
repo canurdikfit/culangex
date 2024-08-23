@@ -33,7 +33,7 @@ export default function DisplayArtists() {
 
     return (
         <>
-            <div className='absolute bottom-20 inset-x-0'>
+            <div className='absolute bottom-20 inset-x-0 max-w-[1440px] mx-auto'>
                 <div className="relative flex flex-nowrap justify-center">
                     <Artists
                         image={SpanishArt}
@@ -76,7 +76,7 @@ export default function DisplayArtists() {
             <div className="absolute bottom-24 w-full bg-gradient-to-b from-black/0 to-black h-[150px] lg:h-[300px]" />
             <div className="absolute h-24 w-full bottom-0 inset-x-0 bg-black z-10" />
 
-            <div className='absolute bottom-20 inset-x-0 z-50 overflow-hidden'>
+            <div className='absolute bottom-20 inset-x-0 z-50 overflow-hidden max-w-[1440px] mx-auto'>
                 <div className="relative flex flex-nowrap justify-center">
                     <Artists
                         image={SpanishArt}

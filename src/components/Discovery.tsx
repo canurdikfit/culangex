@@ -35,7 +35,7 @@ export default function Discovery() {
         alt="Banner Image"
         className="absolute h-full w-full object-cover object-center"
       />
-      <div className="px-6 md:px-14 lg:px-20 flex flex-col items-center relative pb-32">
+      <div className="px-6 md:px-14 lg:px-20 flex flex-col items-center relative 2xl:pt-32 pb-32">
         <div className="absolute z-10 top-0 w-full bg-gradient-to-b from-black via-black/65 to-black/0 h-[150px] md:h-[300px]" />
         <div className="absolute bottom-0 w-full bg-gradient-to-b from-black/0 to-black h-[150px] lg:h-[300px]" />
         <div className="relative max-w-6xl w-full mx-auto grid md:grid-cols-2 items-center z-20 pt-20 lg:pt-32 xl:pt-40 gap-y-16">

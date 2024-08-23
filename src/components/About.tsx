@@ -96,7 +96,7 @@ export default function About() {
         className="absolute h-full w-full object-cover object-center"
       />
 
-      <div className="relative grid md:grid-cols-2 items-center">
+      <div className="relative grid md:grid-cols-2 items-center max-w-[1440px] mx-auto">
         <div className="flex flex-col gap-5 relative z-40 md:order-last">
           <h2 className="text-left xl:text-[80px] js-words">
             <h2 className="text-left inline-block md:block"><div className="word">
@@ -158,24 +158,31 @@ export default function About() {
       <div className="absolute z-30 top-[83%] md:top-[60%] md:sw-full min-w-[1000px] left-0 h-auto">
         <img src={LayerScale} alt="Layer Blur" className="h-auto w-screen" />
       </div>
-      <div
-        id="pool"
-        className="absolute -right-[12%] translate-x-[500px] xl:top-10 top-0 z-20 h-full w-fit hidden lg:block"
-      >
-        <div className="relative xl:h-[1000px] md:h-[700px] ">
-          <img
-            src={LightPool}
-            alt="Light Pool"
-            className="h-full w-auto object-contain"
-          />
-          <img
-            src={Light}
-            alt="Light"
-            id="light"
-            className="xl:h-52 md:h-32 w-auto absolute top-[9%] -left-[3%] xl:-left-[5%] opacity-35"
-          />
+
+
+      <div className="max-w-[1440px] mx-auto absolute h-full w-full z-20">
+        <div
+          id="pool"
+          className="absolute -right-[12%] translate-x-[500px] xl:top-10 top-0  h-full w-fit hidden lg:block"
+        >
+          <div className="relative xl:h-[1000px] md:h-[700px] ">
+            <img
+              src={LightPool}
+              alt="Light Pool"
+              className="h-full w-auto object-contain"
+            />
+            <img
+              src={Light}
+              alt="Light"
+              id="light"
+              className="xl:h-52 md:h-32 w-auto absolute top-[9%] -left-[3%] xl:-left-[5%] opacity-35"
+            />
+          </div>
         </div>
+
       </div>
+
+      <div className="absolute z-20 -bottom-5 w-full bg-[#000000] blur-2xl h-[150px] md:h-[300px]" />
       <div className="absolute z-20 bottom-0 w-full bg-[#030F13] blur-2xl h-[150px] md:h-[300px]" />
       <div className="absolute -left-[16%] xl:-left-[8%] -bottom-20 md:-bottom-40 lg:-bottom-[250px] z-30 h-[250px] md:h-[400px] xl:h-[500px] rotate-[33deg]">
         <img

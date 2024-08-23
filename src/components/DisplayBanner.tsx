@@ -24,25 +24,29 @@ export default function DisplayBanner() {
                 <div className='absolute md:h-80 md:w-60 rotate-45 md:-left-28 md:-top-28 h-40 w-28 -left-12 -top-10'>
                     <img src={PalmTree} alt="Palm Tree" className='h-full w-full object-contain object-center' />
                 </div>
-                <div className="absolute lg:h-[750px] md:h-[460px] lg:-right-64 md:-right-[20%] h-[450px] -right-60 -bottom-5 md:bottom-8 lg:-bottom-28 xl:-bottom-10">
-                    <img
-                        src={LightPool}
-                        alt="Light Pool"
-                        className="h-full w-auto object-contain"
-                    />
-                    <img
-                        src={LightPurple}
-                        alt="Light"
-                        id="waitlistlight"
-                        className="xl:h-96 md:h-60 h-40 w-auto z-20 absolute top-[9%] xl:-left-[2%] lg:left-[3%] md:-left-3 left-1.5 opacity-[8%] blur"
-                    />
-                    <img
-                        src={Light}
-                        alt="Light"
-                        id="waitlistlight"
-                        className="xl:h-96 md:h-60 h-40 w-auto absolute z-20 top-[9%] xl:-left-[2%] lg:left-[3%] md:-left-3 left-1.5 opacity-35"
-                    />
+                <div className="max-w-[1950px] mx-auto absolute w-full h-full overflow-hidden">
+                    <div className="absolute lg:h-[750px] md:h-[460px] lg:-right-64 md:-right-[20%] h-[450px] -right-60 -bottom-5 md:bottom-8 lg:-bottom-28 xl:-bottom-10">
+                        <img
+                            src={LightPool}
+                            alt="Light Pool"
+                            className="h-full w-auto object-contain"
+                        />
+                        <img
+                            src={LightPurple}
+                            alt="Light"
+                            id="waitlistlight"
+                            className="xl:h-96 md:h-60 h-40 w-auto z-20 absolute top-[9%] xl:-left-[2%] lg:left-[3%] md:-left-3 left-1.5 opacity-[8%] blur"
+                        />
+                        <img
+                            src={Light}
+                            alt="Light"
+                            id="waitlistlight"
+                            className="xl:h-96 md:h-60 h-40 w-auto absolute z-20 top-[9%] xl:-left-[2%] lg:left-[3%] md:-left-3 left-1.5 opacity-35"
+                        />
+                    </div>
+
                 </div>
+
                 <div className="absolute left-0 h-[50%] w-72 bottom-0 hidden md:block">
                     <img
                         src={Bridge}

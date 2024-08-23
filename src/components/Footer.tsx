@@ -189,8 +189,8 @@ export default function Footer() {
 
 
 
-      <section className="px-6 md:px-14 lg:px-20 py-5 bg-[#1A1F37]">
-        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 items-center justify-between">
+      <section className="px-6 md:px-14 lg:px-20 py-5 bg-[#1A1F37] ">
+        <div className="max-w-[1440px] mx-auto grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 items-center justify-between">
           <div className="flex items-center justify-center md:justify-start">
             <a href="" className="shrink-0">
               <img src={TwitterBtn} alt="Twitter Icon" className="h-24 w-auto" />
