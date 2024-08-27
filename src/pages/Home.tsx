@@ -6,6 +6,8 @@ import gsap from "gsap";
 import BackToTop from "../components/BackToTop";
 import DisplayBanner from "../components/DisplayBanner";
 import Cursor from "../components/Cursor";
+import About from "../components/About";
+import Discovery from "../components/Discovery";
 
 function Home() {
     useGSAP(() => {
@@ -20,7 +22,11 @@ function Home() {
         <main className="main w-screen overflow-hidden">
             <Navbar />
             <DisplayBanner />
-            <Welcome />
+            <section className="overflow-visible" id="scroll" >
+                <Welcome />
+                <About />
+                <Discovery />
+            </section>
             <Footer />
             <BackToTop />
             <Cursor />

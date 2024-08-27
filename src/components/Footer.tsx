@@ -87,7 +87,7 @@ export default function Footer() {
           />
           <div className="absolute z-10 bg-black backdrop-blur h-full w-full opacity-60" />
           <div className="absolute top-0 w-full bg-gradient-to-b from-black to-black/0 h-[150px] md:h-[300px]" />
-          <div className="relative z-20 pt-20 pb-32 px-6 md:px-14 lg:px-20">
+          <div className="relative z-20 pt-20 pb-32 px-6 md:px-14 lg:px-20 2xl:py-40">
             <h2 className='text-center'>
               <h2 className="uppercase text-center js-footer md:text-3xl lg:text-7xl">
                 <div className="word">
@@ -114,16 +114,16 @@ export default function Footer() {
             <div className="pt-14">
               <div className="flex items-center gap-6 md:gap-10 lg:gap-20 justify-center">
 
-                <div className="hover:-translate-y-10 duration-500 ease-in-out">
-                  <img src={Card1} alt="Cards" className="lg:w-60 md:w-52 w-40 h-auto card" />
+                <div className="hover:-translate-y-10 hover:-rotate-6 duration-500 ease-in-out">
+                  <img src={Card1} alt="Cards" className="2xl:w-72 lg:w-60 md:w-52 w-40 h-auto card" />
                 </div>
 
-                <div className="hover:-translate-y-10 duration-500 ease-in-out">
-                  <img src={Card2} alt="Cards" className="lg:w-60 md:w-52 w-40 h-auto card" />
+                <div className="hover:-translate-y-10 hover:-rotate-6 duration-500 ease-in-out">
+                  <img src={Card2} alt="Cards" className="2xl:w-72 lg:w-60 md:w-52 w-40 h-auto card" />
                 </div>
 
-                <div className="hover:-translate-y-10 duration-500 ease-in-out">
-                  <img src={Card3} alt="Cards" className="lg:w-60 md:w-52 w-40 h-auto card" />
+                <div className="hover:-translate-y-10 hover:-rotate-6 duration-500 ease-in-out">
+                  <img src={Card3} alt="Cards" className="2xl:w-72 lg:w-60 md:w-52 w-40 h-auto card" />
                 </div>
 
               </div>

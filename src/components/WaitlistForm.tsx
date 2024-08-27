@@ -26,6 +26,8 @@ import { useMailChimpForm } from "use-mailchimp-form";
 import ClipLoader from "react-spinners/ClipLoader"
 import { useNavigate } from "react-router"
 import { useMemo, useState } from "react";
+import { Lang } from "./ui/lang";
+
 
 const formSchema = z.object({
     FNAME: z.string().min(5, { message: "Add a valid name." }),
@@ -42,6 +44,8 @@ export default function WaitlistForm() {
     const Countries = useMemo(() => Country.getAllCountries(), [])
     const navigate = useNavigate()
     const url = `https://gmail.us14.list-manage.com/subscribe/post?u=1da928b0b0c9bcd3792f1f9b8&amp;id=${import.meta.env.VITE_MAIL_FORM_API_ID}&amp;f_id=00d2b8e5f0`;
+
+
 
     const {
         error,
@@ -71,16 +75,16 @@ export default function WaitlistForm() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 max-w-xl w-full flex flex-col items-center relative z-30">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 2xl:max-w-3xl max-w-xl w-full flex flex-col items-center relative z-30">
                 <FormField
                     control={form.control}
                     name="FNAME"
                     render={({ field }: any) => (
                         <FormItem className="w-full">
-                            <div className="bg-[#505C81] shadow-inner shadow-black/25 flex items-center pl-4 rounded-xl">
-                                <img src={NameTag} alt="Email Tag" className="h-7 w-7" />
+                            <div className="bg-[#505C81] shadow-inner shadow-black/25 flex items-center pl-4 rounded-xl 2xl:rounded-2xl">
+                                <img src={NameTag} alt="Email Tag" className="h-7 w-auto 2xl:h-9" />
                                 <FormControl className="bg-transparent">
-                                    <Input placeholder="FULL NAME" {...field} className="outline-none placeholder:text-white/25 py-3 placeholder:text-base" />
+                                    <Input placeholder="FULL NAME" {...field} className="outline-none placeholder:text-white/25 py-3 2xl:py-[23px] placeholder:text-base" />
                                 </FormControl>
                             </div>
                             <FormMessage />
@@ -93,10 +97,10 @@ export default function WaitlistForm() {
                     name="EMAIL"
                     render={({ field }: any) => (
                         <FormItem className="w-full">
-                            <div className="bg-[#505C81] shadow-inner shadow-black/25 flex items-center pl-4 rounded-xl">
-                                <img src={EmailTag} alt="Email Tag" className="h-7 w-7" />
+                            <div className="bg-[#505C81] shadow-inner shadow-black/25 flex items-center pl-4 rounded-xl 2xl:rounded-2xl">
+                                <img src={EmailTag} alt="Email Tag" className="h-7 w-auto 2xl:h-9" />
                                 <FormControl className="bg-transparent">
-                                    <Input placeholder="EMAIL ADDRESS" {...field} className="outline-none placeholder:text-white/25 py-3 placeholder:text-base" />
+                                    <Input placeholder="EMAIL ADDRESS" {...field} className="outline-none placeholder:text-white/25 py-3 2xl:py-[23px] placeholder:text-base" />
                                 </FormControl>
                             </div>
                             <FormMessage />
@@ -111,14 +115,14 @@ export default function WaitlistForm() {
                         <FormItem className="w-full">
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
-                                    <SelectTrigger className="bg-[#505C81] shadow-inner shadow-black/25 pl-4 rounded-xl border-0">
+                                    <SelectTrigger className="bg-[#505C81] shadow-inner shadow-black/25 pl-4 rounded-xl 2xl:rounded-2xl border-0">
                                         <div className="flex items-center">
-                                            <img src={CountryTag} alt="Email Tag" className="h-7 w-7 mr-3" />
-                                            <SelectValue placeholder="select country" />
+                                            <img src={CountryTag} alt="Email Tag" className="h-7 w-auto 2xl:h-9 mr-3" />
+                                            <SelectValue placeholder="Current Location" />
                                         </div>
                                     </SelectTrigger>
                                 </FormControl>
-                                <SelectContent className="bg-[#505C81] shadow-inner shadow-black/25 rounded-xl border-0">
+                                <SelectContent className="bg-[#505C81] shadow-inner shadow-black/25 rounded-xl 2xl:rounded-2xl border-0">
                                     {
                                         Countries.map((items, idx) => (
                                             <SelectItem key={idx} value={items.name}>{items.name}</SelectItem>
@@ -130,23 +134,37 @@ export default function WaitlistForm() {
                         </FormItem>
                     )}
                 />
-
                 <div className="space-y-1 w-full">
                     <FormField
                         control={form.control}
                         name="LANGUAGE"
-                        render={({ field }: any) => (
+                        render={({ field }) => (
                             <FormItem className="w-full">
-                                <div className="bg-[#505C81] shadow-inner shadow-black/25 flex items-center pl-4 rounded-xl">
-                                    <img src={LanguageTag} alt="Language Tag" className="h-7 w-7" />
-                                    <FormControl className="bg-transparent">
-                                        <Input placeholder="Preferred Language" {...field} className="outline-none placeholder:text-white/25 py-3 placeholder:text-base" />
+                                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <FormControl>
+                                        <SelectTrigger className="bg-[#505C81] shadow-inner shadow-black/25 pl-4 rounded-xl 2xl:rounded-2xl border-0">
+                                            <div className="flex items-center">
+
+                                                <img src={LanguageTag} alt="Language Tag" className="h-7 w-auto 2xl:h-9 mr-3" />
+                                                <SelectValue placeholder="Preferred Language" />
+                                            </div>
+                                        </SelectTrigger>
                                     </FormControl>
-                                </div>
+                                    <SelectContent className="bg-[#505C81] shadow-inner shadow-black/25 rounded-xl 2xl:rounded-2xl border-0">
+                                        {
+                                            Lang.map((items, idx) => (
+                                                <SelectItem key={idx} value={items.native}>{items.native}</SelectItem>
+                                            ))
+                                        }
+                                    </SelectContent>
+                                </Select>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
+
+
+
                     {error && <p className="text-red-600">
                         Ooops!!! Please try again</p>}
                 </div>
@@ -163,7 +181,7 @@ export default function WaitlistForm() {
                     :
                     <button
                         type="submit"
-                        className="bg-none outline-none border-none max-w-[140px] md:max-w-[150px] xl:max-w-[200px]"
+                        className="bg-none outline-none border-none max-w-[140px] 2xl:max-w-[270px] md:max-w-[150px] xl:max-w-[200px]"
                     >
                         <img
                             src={SubmitBtn}

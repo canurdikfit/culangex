@@ -35,10 +35,10 @@ export default function Discovery() {
         alt="Banner Image"
         className="absolute h-full w-full object-cover object-center"
       />
-      <div className="px-6 md:px-14 lg:px-20 flex flex-col items-center relative 2xl:pt-32 pb-32">
+      <div className="px-6 md:px-14 lg:px-20 flex flex-col items-center relative 2xl:py-60 pb-32 ">
         <div className="absolute z-10 top-0 w-full bg-gradient-to-b from-black via-black/65 to-black/0 h-[150px] md:h-[300px]" />
         <div className="absolute bottom-0 w-full bg-gradient-to-b from-black/0 to-black h-[150px] lg:h-[300px]" />
-        <div className="relative max-w-6xl w-full mx-auto grid md:grid-cols-2 items-center z-20 pt-20 lg:pt-32 xl:pt-40 gap-y-16">
+        <div className="relative max-w-6xl 2xl:max-w-[1500px] w-full mx-auto grid md:grid-cols-2 items-center z-20 pt-20 lg:pt-32 xl:pt-40 gap-y-16">
           <div className="flex flex-col gap-5">
             <h2 className="text-left md:text-4xl lg:text-6xl js-chars">
               <h2 className="text-left">
@@ -85,7 +85,7 @@ export default function Discovery() {
                 </div>
               </h2>
             </h2>
-            <p className="max-w-lg">
+            <p className="max-w-lg 2xl:max-w-2xl">
               Embark on a journey through the rich and diverse tapestry of global cultures. From vibrant festivals and traditional music to unique culinary delights and historical landmarks, immerse yourself in the myriad expressions of human creativity and heritage. Experience the stories, customs, and traditions that make each culture distinct, and broaden your horizons by exploring the world’s cultural treasures.
             </p>
           </div>

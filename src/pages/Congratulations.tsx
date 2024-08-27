@@ -89,14 +89,14 @@ export default function Congratulation() {
 
                 <img src={PalmRight} alt="Palm" className="xl:h-[500px] h-[350px] w-auto absolute xl:-bottom-[200px] -bottom-[130px] md:z-10 -left-14" />
 
-                <img src={Artist} alt="Artist" className="xl:h-[600px] h-[500px] w-auto absolute md:z-10 -right-20 -bottom-[20%]" />
-                <img src={Aje} alt="Artist" className="xl:h-[500px] h-[400px] w-auto absolute -bottom-[10%] md:z-10 right-0" />
+                <img src={Artist} alt="Artist" className="2xl:w-[600px] 2xl:h-auto xl:h-[600px] h-[500px] w-auto absolute md:z-10 -right-20 -bottom-[20%]" />
+                <img src={Aje} alt="Artist" className="2xl:w-[750px] 2xl:h-auto xl:h-[500px] h-[400px] w-auto absolute -bottom-[10%] md:z-10 right-0" />
 
                 <div
                     id="waitlistpool"
-                    className="absolute -right-[15%] md:-bottom-[150px] xl:-bottom-[200px] h-full xl:w-fit md:w-[400px] hidden lg:block"
+                    className="absolute -right-[18%] -bottom-32 h-fit xl:w-fit 2xl:-bottom-[20%] 2xl:-right-[17%] md:w-[400px] hidden lg:block z-40"
                 >
-                    <div className="relative md:h-[700px] ">
+                    <div className="relative md:h-[700px] 2xl:h-[1200px]">
                         <img
                             src={LightPool}
                             alt="Light Pool"
@@ -106,7 +106,7 @@ export default function Congratulation() {
                             src={Light}
                             alt="Light"
                             id="waitlistlight"
-                            className="xl:h-96 md:h-60 w-auto absolute xl:top-[9%] md:top-[18%]  xl:-left-[3%] z-20 opacity-40"
+                            className="xl:h-96 md:h-60 w-auto absolute xl:top-[9%] md:top-[18%] 2xl:left-[3%] xl:-left-[3%] z-20 opacity-40"
                         />
                     </div>
                 </div>
